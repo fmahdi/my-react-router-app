@@ -3,6 +3,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import SideBar from '../Sidebar/SideBar';
 import { Outlet } from 'react-router';
+import './Root.css';
 
 
 
@@ -12,10 +13,10 @@ const Root = () => {
             <Header></Header>
             <div className='flex-me'>
                 <SideBar></SideBar>
-               <Outlet></Outlet>
+                <Outlet></Outlet>
             </div>
             <Footer></Footer>
-            
+
         </div>
     );
 };
