@@ -5,8 +5,6 @@ import './Header.css';
 const Header = () => {
     return (
         <div>
-            <p>This is Header
-            </p>
             <nav>
                 <NavLink to='/'>Home</NavLink>
                 <NavLink to='/mobiles'>Mobiles</NavLink>
