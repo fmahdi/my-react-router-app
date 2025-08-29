@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router';
+import SingleUser from './SingleUser/SingleUser';
 
 const User = () => {
     const userData = useLoaderData();
@@ -7,7 +8,9 @@ const User = () => {
 
     return (
         <div>
-            <p>I am first USER</p>
+            {
+                userData.map(user => <SingleUser key={user.id} user={user}></SingleUser>)
+            }
         </div>
     );
 };
