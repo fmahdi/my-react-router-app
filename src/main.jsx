@@ -37,6 +37,7 @@ const router = createBrowserRouter(
         { path: '/viteApp', Component: App },
         {
           path: '/user/:userID',
+          loader: ({ params }) => fetch(`https://jsonplaceholder.typicode.com/users/${params.userID}`),
           Component: UserDeets,
         }
       ]
