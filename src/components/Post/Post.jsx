@@ -7,9 +7,12 @@ const Post = ({ elem }) => {
     return (
         <div className='card-post'>
             <h3>{title}</h3>
+            {/* Navigation way 1 */}
             <Link to={`/posts/${id}`}>
                 <button>SHow Details</button>
             </Link>
+            {/* Navigation way 2 */}
+            <button>Details of Post ID-{id}</button>
         </div>
     );
 };
