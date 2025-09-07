@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
 import { Link } from 'react-router';
+import EmbeddedInfo from '../EmbeddedInfo/EmbeddedInfo';
 
 //defining the style of the component as a JS object
 const singleUserStyle = {
@@ -10,7 +11,7 @@ const singleUserStyle = {
 const SingleUser = ({ user }) => {
     const { name, phone, username, address, id } = user;
     const [infoClick, setInfoClick] = useState(false);
-
+    const userPromise = fetch(`https://jsonplaceholder.typicode.com/users/${id}`).then(res => res.json());
     return (
         <div style={singleUserStyle}>
             <p>Name: {name}</p>
@@ -25,6 +26,11 @@ const SingleUser = ({ user }) => {
                 }
                 Info
             </button>
+            {
+                infoClick ? <Suspense fallback={<span>Loading......</span>}>
+                    <EmbeddedInfo userPromise={userPromise}></EmbeddedInfo>
+                </Suspense> : ""
+            }
         </div>
     );
 };
