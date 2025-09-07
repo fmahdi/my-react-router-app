@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router';
 
 //defining the style of the component as a JS object
@@ -9,6 +9,7 @@ const singleUserStyle = {
 }
 const SingleUser = ({ user }) => {
     const { name, phone, username, address, id } = user;
+    const [infoClick, setInfoClick] = useState(false);
 
     return (
         <div style={singleUserStyle}>
@@ -17,6 +18,13 @@ const SingleUser = ({ user }) => {
             <p>UserName: {username}</p>
             <p>City: {address.city}</p>
             <Link to={`/user/${id}`}>Show Details</Link>
+            <button onClick={() => setInfoClick(!infoClick)}>
+                {
+
+                    infoClick ? "Hide " : "Show "
+                }
+                Info
+            </button>
         </div>
     );
 };
