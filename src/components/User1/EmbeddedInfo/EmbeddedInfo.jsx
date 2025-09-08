@@ -7,7 +7,7 @@ const EmbeddedInfo = ({ userPromise }) => {
     const userPromiseData = use(userPromise);
     const { name, company } = userPromiseData
     return (
-        <div style={{ color: "yellow" }}>
+        <div style={{ color: "red" }}>
             <h3>{name}</h3>
             <h4>Company - {company.name}</h4>
             <p>Moral - {company.catchPhrase}</p>
